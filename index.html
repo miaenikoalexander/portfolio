@@ -436,6 +436,7 @@
         <h1 class="centered-heading">YOUR NAME</h1>
         <h2 class="centered-subtitle">CREATIVE DIRECTOR / VFX ARTIST</h2>
 
+        
 
         <div class="video-container">
             <!-- Placeholder for video. For a real site, you'd embed a muted, looping video here. -->
@@ -487,7 +488,7 @@
             <p class="text-lg mb-8 text-gray-700">
                 Have a project in mind or just want to say hello? Feel free to reach out!
             </p>
-            <form class="space-y-6">
+            <form id="contact-form" class="space-y-6"> <!-- Added id to the form -->
                 <div>
                     <input type="text" id="contact-name" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-all duration-200">
                 </div>
@@ -497,7 +498,7 @@
                 <div>
                     <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-all duration-200"></textarea>
                 </div>
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Send Message</button>
+                <button type="button" id="send-message-button" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Send Message</button>
             </form>
         </div>
     </section>
@@ -517,7 +518,7 @@
                 <!-- Instagram Icon -->
                 <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.381.898.421.421.681.819.899 1.381.166.422.36 1.057.415 2.227.059 1.266.071 1.646.071 4.85s-.012 3.584-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.898 1.381-.421.421-.819.681-1.381.899-.422.166-1.057.36-2.227.415-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.071c-1.17-.055-1.805-.249-2.227-.415-.562-.217-.96-.477-1.381-.898-.421-.421-.681-.819-.899-1.381-.166-.422-.36-1.057-.415-2.227-.059-1.266-.071-1.646-.071-4.85s.012-3.584.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477-.96.898-1.381.421-.421.819-.681 1.381-.899.422-.166 1.057-.36 2.227-.415 1.266-.059 1.646-.071 4.85-.071zm0-1.802c-3.444 0-3.865.013-5.234.077-1.35.064-2.21.28-2.909.55-.71.272-1.298.66-1.883 1.245-.585.585-.973 1.173-1.245 1.883-.27.699-.486 1.559-.55 2.909-.064 1.369-.077 1.79-.077 5.234s.013 3.865.077 5.234c.064 1.35.28 2.21.55 2.909.272.71.66 1.298 1.245 1.883.585.585 1.173.973 1.883 1.245.699.27 1.559.486 2.909.55 1.369.064 1.79.077 5.234.077s3.865-.013 5.234-.077c1.35-.064 2.21-.28 2.909-.55.71-.272 1.298-.66 1.883-1.245.585-.585.973-1.173 1.245-1.883.27-.699.486-1.559.55-2.909.064-1.369.077-1.79.077-5.234s-.013-3.865-.077-5.234c-.064-1.35-.28-2.21-.55-2.909-.272-.71-.66-1.298-1.245-1.883-.585-.585-1.173-.973-1.883-1.245-.699-.27-1.559-.486-2.909-.55-1.369-.064-1.79-.077-5.234-.077zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.472-8.662a1.44 1.44 0 100-2.88 1.44 1.44 0 000 2.88z"/>
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.381.898.421.421.681.819.899 1.381.166.422.36 1.057.415 2.227.059 1.266.071 1.646.071 4.85s-.012 3.584-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.898 1.381-.421.421-.819.681-1.381.899-.422.166-1.057.36-2.227.415-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.071c-1.17-.055-1.805-.249-2.227-.415-.562-.217-.96-.477-1.381-.898-.421-.421-.681-.819-.899-1.381-.166-.422-.36-1.057-.415-2.227-.059-1.266-.071-1.646-.071-4.85s.012-3.584.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477-.96.898-1.381.421-.421.819-.681 1.381-.899.422-.166 1.057-.36 2.227-.415 1.266-.059 1.646-.071 4.85-.071zm0-1.802c-3.444 0-3.865.013-5.234.077-1.35.064-2.21.28-2.909.55-.71.272-1.298.66-1.883 1.245-.585.585-.973 1.173-1.245 1.883-.27.699-.486 1.559-.55 2.909-.064 1.369-.077 1.79-.077 5.234s.013 3.865.077 5.234c.064 1.35.28 2.21.55 2.909.272.71.66 1.298 1.245 1.883.585.585 1.173.973 1.883 1.245.699.27 1.559.486 2.909.55 1.369.064 1.79.077 5.234.077s3.865-.013 5.234-.077c1.35-.064 2.21-.28 2.909-.55.71-.272 1.298-.66 1.883-1.245-.585-.585-1.173-.973-1.883-1.245-.699-.27-1.559-.486-2.909-.55-1.369-.064-1.79-.077-5.234-.077zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.472-8.662a1.44 1.44 0 100-2.88 1.44 1.44 0 000 2.88z"/>
                     </svg>
                 </a>
             </div>
@@ -531,7 +532,10 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const navLinks = mobileMenu.querySelectorAll('a');
-            // Removed references to followButton and socialLinksWrap as they are no longer needed for toggle functionality.
+            const sendMessageButton = document.getElementById('send-message-button'); // Get the send message button
+            const contactNameInput = document.getElementById('contact-name');
+            const contactEmailInput = document.getElementById('contact-email');
+            const contactMessageInput = document.getElementById('contact-message');
 
             // --- Mobile Menu Toggle ---
             mobileMenuButton.addEventListener('click', function() {
@@ -553,8 +557,35 @@
                 }
             });
 
-            // --- Removed Footer Social Links Toggle JavaScript ---
-            // The social links are now always visible and directly clickable.
+            // --- Send Message Button Functionality ---
+            sendMessageButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const name = contactNameInput.value;
+                const email = contactEmailInput.value;
+                const message = contactMessageInput.value;
+
+                // Basic validation (optional, but good practice)
+                if (!name || !email || !message) {
+                    alert('Please fill in all fields before sending your message.'); // Using alert for simplicity, consider a custom modal in production
+                    return;
+                }
+
+                const recipientEmail = 'aaronalexander5674@gmail.com';
+                const subject = encodeURIComponent(`Message from Portfolio - ${name}`);
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+                // Construct the mailto link
+                const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+
+                // Open the default email client
+                window.location.href = mailtoLink;
+
+                // Optionally clear the form after sending
+                contactNameInput.value = '';
+                contactEmailInput.value = '';
+                contactMessageInput.value = '';
+            });
         });
     </script>
 </body>
