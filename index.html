@@ -1,1 +1,561 @@
+<!-- index.html: The main HTML structure of your enhanced portfolio website -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- Load Tailwind CSS for utility-first styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* style.css: Custom CSS for your portfolio website */
+        /* Apply Inter font family globally */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light gray background */
+            color: #334155; /* Darker text color */
+        }
+        /* Custom styling for the mobile navigation icon */
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #334155;
+            margin: 5px 0;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+        .hamburger-menu.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
 
+        /* Styles for the full-width project sections (from Park Pictures inspiration) */
+        /* NOTE: These styles are kept for potential future use or if other sections use similar visual treatment,
+                 but the .project-section HTML itself has been removed. */
+        .project-section {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Adjust height as needed */
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end; /* Align content to the bottom */
+            justify-content: flex-start; /* Align content to the left */
+        }
+
+        .project-section img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .project-overlay {
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background for readability */
+            width: 100%; /* Full width overlay */
+        }
+        .project-overlay h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .project-overlay h3 {
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+
+        /* Footer social links toggle - REMOVED */
+        /*
+        .social-link-wrap.hidden {
+            display: none;
+        }
+        */
+
+        /* Styles for Greg Joblove inspired sections */
+        .section-header {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            color: #1e293b; /* Darker gray for headers */
+        }
+
+        .welcome-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-color: #1a202c; /* Dark background for welcome */
+            color: white;
+            padding: 2rem;
+        }
+
+        .welcome-screen .centered-heading {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-screen .centered-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #cbd5e1;
+        }
+
+        .welcome-screen .link-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .welcome-screen .link-container a {
+            color: #a0aec0;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .welcome-screen .link-container a:hover {
+            color: #ffffff;
+        }
+
+        .welcome-screen .video-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto 2rem auto; /* Centered horizontally */
+            border-radius: 0.75rem; /* Rounded corners */
+            overflow: hidden; /* Ensure video respects border-radius */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Shadow */
+        }
+
+        .welcome-screen .video-container video,
+        .welcome-screen .video-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Removed .welcome-screen .video-container .subtitle as per request */
+        /*
+        .welcome-screen .video-container .subtitle {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+            color: white;
+            font-size: 0.9rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+        }
+        */
+
+        /* Projects List Styling - REMOVED */
+        /*
+        .projects-list-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: #1e293b;
+            transition: background-color 0.2s ease;
+        }
+
+        .project-item:hover {
+            background-color: #f0f4f8;
+        }
+
+        .project-item-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .project-item-meta {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .project-item-meta span {
+            font-weight: 700;
+        }
+
+        .project-item-meta sup {
+            font-size: 0.75em;
+            vertical-align: super;
+            margin-left: 0.25rem;
+        }
+
+        #hover-image-preview {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 400px;
+            max-height: 80vh;
+            object-fit: contain;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+            z-index: 100;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        #hover-image-preview.visible {
+            opacity: 1;
+        }
+
+        .filter-options {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .filter-options label {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: #475569;
+        }
+        .filter-options input[type="checkbox"] {
+            margin-right: 0.5rem;
+            accent-color: #3b82f6;
+        }
+        .cv-link {
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cv-link:hover {
+            background-color: #2563eb;
+        }
+        */
+
+        /* Reels section */
+        #reels {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem 0;
+        }
+        .reel-wrapper {
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+        }
+        .reel-wrapper .subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+        .reel-wrapper video {
+            width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Lightbox styles - REMOVED */
+        /*
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .lightbox-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            max-width: 90%;
+            max-height: 90%;
+            overflow-y: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #64748b;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #e2e8f0;
+            transition: background-color 0.3s ease;
+        }
+        .lightbox-close:hover {
+            background-color: #cbd5e1;
+        }
+
+        .lightbox-text {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .lightbox-text h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .lightbox-text #lightbox-small-info {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        .lightbox-text #lightbox-blurb {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+        */
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .welcome-screen .centered-heading {
+                font-size: 3rem;
+            }
+            .welcome-screen .centered-subtitle {
+                font-size: 1.2rem;
+            }
+            .section-header {
+                font-size: 2rem;
+            }
+            /* Removed project-specific responsive styles */
+            /*
+            .project-item-title {
+                font-size: 1rem;
+            }
+            .project-item-meta {
+                font-size: 0.8rem;
+            }
+            .lightbox-text h2 {
+                font-size: 1.5rem;
+            }
+            */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4 px-6 md:px-12 fixed w-full z-20 rounded-b-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo/Name (SVG inspired by Park Pictures) -->
+            <a href="#welcome-screen" class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition-colors duration-300 flex items-center space-x-2">
+                <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zM11 7h2v10h-2V7zM7 11h2v2H7v-2zM15 11h2v2h-2v-2z"/>
+                </svg>
+                <span>Your Studio</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#reels" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Reels</a></li>
+                <li><a href="#about" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">About</a></li>
+                <li><a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Navigation Toggle -->
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        <!-- Mobile Navigation Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white mt-4 py-2 rounded-lg shadow-md">
+            <ul class="flex flex-col items-center space-y-4">
+                <li><a href="#reels" class="block text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-md transition-colors duration-300">Reels</a></li>
+                <li><a href="#about" class="block text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-md transition-colors duration-300">About</a></li>
+                <li><a href="#contact" class="block text-gray-700 hover:text-blue-600 font-medium py-2 px-4 rounded-md transition-colors duration-300">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Welcome Screen (Inspired by Greg Joblove's initial reel and text) -->
+    <section id="welcome-screen">
+        <h1 class="centered-heading">YOUR NAME</h1>
+        <h2 class="centered-subtitle">CREATIVE DIRECTOR / VFX ARTIST</h2>
+
+
+        <div class="video-container">
+            <!-- Placeholder for video. For a real site, you'd embed a muted, looping video here. -->
+            <!-- Using a high-res placeholder image to simulate a video cover -->
+            <center><img src="https://placehold.co/800x450/1f2937/d1d5db?text=Your+Main+Reel+Video" alt="Main Reel Placeholder"></center>
+        </div>
+    </section>
+
+    <!-- Reels Section (Inspired by Greg Joblove's dedicated reels section) -->
+    <section id="reels" class="py-16 px-6 md:px-12 bg-gray-100">
+        <h2 class="section-header">Reels</h2>
+        <div class="reel-wrapper">
+            <p class="subtitle">VFX REEL</p>
+            <!-- Placeholder for VFX Reel Video -->
+            <img src="https://placehold.co/800x450/475569/e2e8f0?text=VFX+Reel+Video" alt="VFX Reel Placeholder">
+        </div>
+
+        <div class="reel-wrapper">
+            <p class="subtitle">MOTION GRAPHIC REEL</p>
+            <!-- Placeholder for Motion Graphic Reel Video -->
+            <img src="https://placehold.co/800x450/475569/e2e8f0?text=MoGraph+Reel+Video" alt="Motion Graphic Reel Placeholder">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 md:px-12 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="section-header">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <img src="https://placehold.co/300x300/e2e8f0/334155?text=Your+Photo" alt="Your Photo" class="rounded-full w-48 h-48 object-cover mx-auto shadow-lg">
+                </div>
+                <div class="md:w-2/3 text-left">
+                    <p class="text-lg leading-relaxed mb-4 text-gray-700">
+                        Hello! I'm [Your Name], a passionate [Your Profession/Specialty] with a keen eye for [mention a skill, e.g., visual storytelling, user experience, problem-solving]. My work focuses on creating impactful and engaging [type of work, e.g., digital experiences, cinematic content, innovative solutions].
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        I believe in a collaborative approach and am always eager to take on new challenges that push creative boundaries. When I'm not [your work activity], you can find me [mention a hobby/interest].
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-6 md:px-12 bg-gray-100">
+        <div class="container mx-auto max-w-2xl text-center">
+            <h2 class="section-header">Get In Touch</h2>
+            <p class="text-lg mb-8 text-gray-700">
+                Have a project in mind or just want to say hello? Feel free to reach out!
+            </p>
+            <form class="space-y-6">
+                <div>
+                    <input type="text" id="contact-name" name="name" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-all duration-200">
+                </div>
+                <div>
+                    <input type="email" id="contact-email" name="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-all duration-200">
+                </div>
+                <div>
+                    <textarea id="contact-message" name="message" rows="5" placeholder="Your Message" class="w-full p-3 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-all duration-200"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white py-8 px-6 md:px-12 text-center rounded-t-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+            <!-- Social Links -->
+            <div class="flex space-x-6">
+                <!-- LinkedIn Icon -->
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.75a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zM19 19h-3v-4.7c0-1.2-.4-2-1.5-2S13 13.1 13 14.3V19h-3V8h3v1.8c.5-.8 1.4-1.8 3-1.8 2.2 0 4 1.5 4 4.5V19z"/>
+                    </svg>
+                </a>
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.381.898.421.421.681.819.899 1.381.166.422.36 1.057.415 2.227.059 1.266.071 1.646.071 4.85s-.012 3.584-.071 4.85c-.055 1.17-.249 1.805-.415 2.227-.217.562-.477.96-.898 1.381-.421.421-.819.681-1.381.899-.422.166-1.057.36-2.227.415-1.266.059-1.646.071-4.85.071s-3.584-.012-4.85-.071c-1.17-.055-1.805-.249-2.227-.415-.562-.217-.96-.477-1.381-.898-.421-.421-.681-.819-.899-1.381-.166-.422-.36-1.057-.415-2.227-.059-1.266-.071-1.646-.071-4.85s.012-3.584.071-4.85c.055-1.17.249-1.805.415-2.227.217-.562.477-.96.898-1.381.421-.421.819-.681 1.381-.899.422-.166 1.057-.36 2.227-.415 1.266-.059 1.646-.071 4.85-.071zm0-1.802c-3.444 0-3.865.013-5.234.077-1.35.064-2.21.28-2.909.55-.71.272-1.298.66-1.883 1.245-.585.585-.973 1.173-1.245 1.883-.27.699-.486 1.559-.55 2.909-.064 1.369-.077 1.79-.077 5.234s.013 3.865.077 5.234c.064 1.35.28 2.21.55 2.909.272.71.66 1.298 1.245 1.883.585.585 1.173.973 1.883 1.245.699.27 1.559.486 2.909.55 1.369.064 1.79.077 5.234.077s3.865-.013 5.234-.077c1.35-.064 2.21-.28 2.909-.55.71-.272 1.298-.66 1.883-1.245.585-.585.973-1.173 1.245-1.883.27-.699.486-1.559.55-2.909.064-1.369.077-1.79.077-5.234s-.013-3.865-.077-5.234c-.064-1.35-.28-2.21-.55-2.909-.272-.71-.66-1.298-1.245-1.883-.585-.585-1.173-.973-1.883-1.245-.699-.27-1.559-.486-2.909-.55-1.369-.064-1.79-.077-5.234-.077zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.472-8.662a1.44 1.44 0 100-2.88 1.44 1.44 0 000 2.88z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="mt-4 text-gray-400 text-sm">&copy; 2025 Your Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- script.js: JavaScript for interactive elements -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+            // Removed references to followButton and socialLinksWrap as they are no longer needed for toggle functionality.
+
+            // --- Mobile Menu Toggle ---
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.classList.toggle('open');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.classList.remove('open');
+                }
+            });
+
+            // --- Removed Footer Social Links Toggle JavaScript ---
+            // The social links are now always visible and directly clickable.
+        });
+    </script>
+</body>
+</html>
