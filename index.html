@@ -13,6 +13,11 @@
             font-family: 'gambado-sans', sans-serif;
             background-color: #ffffff;
             color: #000000;
+            cursor: none; /* Hide the default cursor */
+        }
+        /* Style for links and interactive elements */
+        a, button {
+            cursor: none;
         }
         /* Using Gambado Scotch for header */
         header h1 {
@@ -26,9 +31,26 @@
             font-family: Arial, sans-serif;
             font-style: italic;
         }
+        /* Custom cursor styles */
+        .custom-cursor {
+            width: 64px; /* <-- Adjust size here */
+            height: 64px; /* <-- Adjust size here */
+            background-image: url('big_cursor.jpg'); /* <-- Replace with the name of your image file */
+            background-size: cover;
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none; /* Allows clicking through the cursor */
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease-out;
+            z-index: 9999; /* Ensures the cursor is on the top layer, above all other content */
+            box-shadow: 0 0 5px rgba(0,0,0,0);
+        }
     </style>
 </head>
 <body class="antialiased">
+
+    <!-- Custom Cursor Element -->
+    <div class="custom-cursor"></div>
 
     <div class="container mx-auto px-6 py-8">
         <!-- Navigation -->
@@ -40,32 +62,30 @@
         </nav>
 
         <!-- Header Name -->
-        <header class="text-center py-16 md:py-24">
-            <h1 class="font-bold text-5xl md:text-7xl lg:text-8xl tracking-tighter">
+        <header class="text-center py-12 md:py-16">
+            <h1 class="font-bold text-8xl md:text-[9rem] lg:text-[12rem] tracking-tighter leading-tight">
                 Mia Eniko Alexander
             </h1>
         </header>
-
-        <!-- About Me Heading -->
-        <div class="text-right">
-            <h2 class="text-3xl font-bold mb-8 inline-block">About Me</h2>
-        </div>
 
         <!-- Main Content: Photo and About Text -->
         <main id="about" class="my-12">
             <div class="flex flex-col md:flex-row items-center md:items-start gap-12 lg:gap-16">
                 <!-- Photo Section -->
                 <div class="w-full md:w-1/2 flex justify-center">
-                    <div class="bg-gray-200 w-full max-w-md h-96 md:h-[500px] rounded-lg shadow-md">
+                    <div class="bg-gray-200 w-full max-w-lg h-auto md:h-[600px] rounded-lg shadow-md">
                         <img src="mia_headshot.jpeg" alt="Portrait of Mia Eniko Alexander" class="w-full h-full object-cover rounded-lg">
                     </div>
                 </div>
                 <!-- Text Section -->
-                <div class="w-full md:w-1/2 flex flex-col justify-between md:h-[500px]">
-                    <p class="text-lg leading-relaxed text-gray-800 mb-4 arial-italic">
+                <div class="w-full md:w-1/2 flex flex-col justify-center md:h-[600px]">
+                    <div class="text-right">
+                        <h2 class="text-3xl font-bold mb-6 inline-block">About Me</h2>
+                    </div>
+                    <p class="text-2xl leading-relaxed text-gray-800 mb-4 arial-italic">
                        Hi! My name is <a href="https://www.linkedin.com/in/miaenikoalexander" class="hover:underline">Mia Alexander</a>, and I am an aspiring marketing and communications professional with a passion for storytelling through film. 
                     </p>
-                    <p class="text-lg leading-relaxed text-gray-800 arial-italic">
+                    <p class="text-2xl leading-relaxed text-gray-800 arial-italic">
                         I'm currently a senior at Wesleyan University, majoring in film. Outside of the classroom, you can find me playing bass with my band, <a href="https://www.route9.org/" class="hover:underline">writing for the literary magazine</a>, or <a href="https://magazine.blogs.wesleyan.edu/2025/02/20/words-music-and-ai-inside-wesleyans-music-video-production-course/?utm_source=linkedin&utm_medium=social&utm_campaign=magazine-wescommunity-learn-more-ucomm-mv-production-course-feb-2025" class="hover:underline">shooting music videos</a> with my roommates.
                     </p>
                 </div>
@@ -78,7 +98,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
                 <!-- Project 1 -->
                 <div class="group">
-                    <div class="relative w-full h-80 rounded-lg shadow-md overflow-hidden">
+                    <div class="relative w-full aspect-video rounded-lg shadow-md overflow-hidden">
                         <img src="https://placehold.co/600x400/e2e8f0/000000?text=Project+1" alt="Project One" class="w-full h-full object-cover group-hover:blur-sm transition-all duration-300">
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                              <p class="text-white arial-italic text-center">A brief description of the project.</p>
@@ -90,7 +110,7 @@
                 </div>
                 <!-- Project 2 -->
                 <div class="group">
-                    <div class="relative w-full h-80 rounded-lg shadow-md overflow-hidden">
+                    <div class="relative w-full aspect-video rounded-lg shadow-md overflow-hidden">
                         <img src="https://placehold.co/600x400/e2e8f0/000000?text=Project+2" alt="Project Two" class="w-full h-full object-cover group-hover:blur-sm transition-all duration-300">
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                              <p class="text-white arial-italic text-center">A brief description of the project.</p>
@@ -102,7 +122,7 @@
                 </div>
                 <!-- Project 3 -->
                 <div class="group">
-                    <div class="relative w-full h-80 rounded-lg shadow-md overflow-hidden">
+                    <div class="relative w-full aspect-video rounded-lg shadow-md overflow-hidden">
                         <img src="https://placehold.co/600x400/e2e8f0/000000?text=Project+3" alt="Project Three" class="w-full h-full object-cover group-hover:blur-sm transition-all duration-300">
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                              <p class="text-white arial-italic text-center">A brief description of the project.</p>
@@ -114,7 +134,7 @@
                 </div>
                 <!-- Project 4 -->
                 <div class="group">
-                    <div class="relative w-full h-80 rounded-lg shadow-md overflow-hidden">
+                    <div class="relative w-full aspect-video rounded-lg shadow-md overflow-hidden">
                         <img src="https://placehold.co/600x400/e2e8f0/000000?text=Project+4" alt="Project Four" class="w-full h-full object-cover group-hover:blur-sm transition-all duration-300">
                         <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                              <p class="text-white arial-italic text-center">A brief description of the project.</p>
@@ -143,12 +163,28 @@
     </div>
 
     <script>
-        // This script is for potential future interactivity.
+        const cursor = document.querySelector('.custom-cursor');
+
+        // Make cursor follow the mouse
+        window.addEventListener('mousemove', e => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Add a scaling effect when hovering over links or buttons
+        const interactiveElements = document.querySelectorAll('a, button');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        });
     </script>
 
 </body>
 </html>
-
 
 
 
