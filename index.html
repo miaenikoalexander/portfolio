@@ -155,18 +155,34 @@
 
   <!-- Contact Section -->
   <footer id="contact" class="text-center py-16 px-6">
-    <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-    <div class="mt-8">
-      <a href="mailto:miaeniko@gmail.com" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">miaeniko@gmail.com</a>
-    </div>
-    <div class="mt-8">
-      <a href="https://www.linkedin.com/in/miaenikoalexander" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">My LinkedIn</a>
-    </div>
-    <div class="mt-8">
-      <a href="MIA ALEXANDER RESUME.pdf" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300" download>Download My Resume</a>
+    <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+    
+    <!-- Flex Container: Row layout by default, wraps on tiny screens, centers elements -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mt-8">
+      
+      <!-- Email Button -->
+      <div>
+        <a href="mailto:miaeniko@gmail.com" class="inline-block px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">
+          miaeniko@gmail.com
+        </a>
+      </div>
+      
+      <!-- LinkedIn Button -->
+      <div>
+        <a href="https://www.linkedin.com/in/miaenikoalexander" class="inline-block px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">
+          My LinkedIn
+        </a>
+      </div>
+      
+      <!-- Resume Button -->
+      <div>
+        <a href="MIA ALEXANDER RESUME.pdf" class="inline-block px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300" download>
+          Download My Resume
+        </a>
+      </div>
+      
     </div>
   </footer>
-
   <script>
     const cursor = document.querySelector('.custom-cursor');
     window.addEventListener('mousemove', e => {
