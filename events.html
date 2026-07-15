@@ -13,6 +13,19 @@
       color: #000000;
       cursor: none;
     }
+    .dotted-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1; /* Pushes the grid behind your text */
+  pointer-events: none; /* Prevents the grid from blocking clicks/interactions */
+  
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+  
+  /* Smooth radial fade: strongest at the center, melts away at the edges */
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
+}
     a, button { cursor: none; }
     header h1 { font-family: 'gambado-scotch', serif; }
     html { scroll-behavior: smooth; }
