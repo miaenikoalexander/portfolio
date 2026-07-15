@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html data-type="html" data-identifier="5e8a719c-9c76-4be9-afb5-22e7077a9442" data-title="Writing - Mia Alexander" data-version="2" width="1200" height="800"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Writing - Mia Alexander</title>
@@ -11,24 +9,26 @@
       font-family: 'gambado-sans', sans-serif;
       background-color: #ffffff;
       color: #000000;
-      cursor: none;
+      cursor: none; /* Hide default cursor */
     }
     a, button { cursor: none; }
     header h1 { font-family: 'gambado-scotch', serif; }
     html { scroll-behavior: smooth; }
     .arial-italic { font-family: Arial, sans-serif; font-style: italic; }
+    
     .custom-cursor {
       width: 56px;
       height: 56px;
       background-image: url('big_cursor.png');
       background-size: cover;
       position: fixed;
+      left: -100px; /* Hide off-screen initially */
+      top: -100px;
       border-radius: 50%;
-      pointer-events: none;
+      pointer-events: none; /* Crucial so cursor doesn't block clicks */
       transform: translate(-50%, -50%);
       transition: transform 0.1s ease-out;
       z-index: 9999;
-      box-shadow: 0 0 5px rgba(0,0,0,0);
     }
   </style>
 </head>
@@ -38,60 +38,153 @@
 
   <div class="container mx-auto px-6 md:px-24 py-8">
     <!-- Navigation -->
-    <nav class="flex justify-end space-x-6 md:space-x-12 text-sm md:text-base tracking-wider uppercase">
-      <a href="index.html#about" class="hover:text-gray-500 transition duration-300">About</a>
-      <a href="index.html#work" class="hover:text-gray-500 transition duration-300">Work</a>
-      <a href="index.html#contact" class="hover:text-gray-500 transition duration-300">Contact</a>
+    <nav class="flex justify-between items-center tracking-wider uppercase text-sm md:text-base">
+      <a href="index.html" class="hover:text-gray-500 transition duration-300 underline font-semibold">← Home</a>
+      <div class="flex space-x-6 md:space-x-12">
+        <a href="index.html#about" class="hover:text-gray-500 transition duration-300">About</a>
+        <a href="index.html#work" class="hover:text-gray-500 transition duration-300">Work</a> 
+        <a href="index.html#contact" class="hover:text-gray-500 transition duration-300">Contact</a>
+      </div>
     </nav>
 
-    <!-- Header -->
-    <header class="text-center py-12 md:py-16">
-      <h1 class="font-bold text-[clamp(2.5rem,10vw,8rem)] tracking-tighter leading-tight">
-        Writing
-      </h1>
-      <a href="index.html" class="inline-block mt-4 text-gray-600 hover:text-black transition duration-300 underline">← Back to Home</a>
-    </header>
-
     <!-- Main Content Area -->
-    <main class="my-12">
-      <div class="flex flex-col gap-12">
-        <h2 class="text-3xl font-bold mb-6">Projects & Experience</h2>
+    <main class="my-16"> <div class="flex flex-col gap-12">
         
-        <!-- ADD MORE SPECIFIC INFORMATION HERE -->
-        <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-          <p class="arial-italic text-gray-500 text-lg mb-4">
-            [Space for more specific information, links to published articles, copywriting samples, or press releases]
-          </p>
-          <p class="text-sm text-gray-400">
-            Tip: Replace this div with your writing samples, PDF embeds, or links to external publications.
-          </p>
+        <!-- Minimalist Section Header -->
+        <div class="border-b border-black pb-4">
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Writing &amp; Editorial</h2>
         </div>
-        <!-- END PLACEHOLDER -->
+        
+        <!-- Showcase Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          <!-- Card 1: Route 9 -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <a href="#" class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- Route 9 Editorial Image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="A professional editorial photo of beautiful, minimalist chapbooks stacked neatly on an industrial studio table. The top book features clean sans-serif typography that reads Route 9 in black ink, surrounded by warm architectural shadows and natural morning light, elegant desktop."></div>
+                <!-- Sophisticated Minimal Overlay on Hover -->
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <span class="text-white text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 font-bold">Explore Catalog</span>
+                </div>
+              </a>
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">Route 9</h3>
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Independent Publishing House</span>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                An independent student-run publishing house I directed and managed at Wesleyan University. Spearheaded editorial acquisition, publication management, physical chapbook distribution, and organized community book releases.
+              </p>
+            </div>
+            <div>
+              <a href="#" class="inline-flex items-center text-sm font-bold tracking-wider uppercase border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors duration-200">
+                View Route 9 Catalog →
+              </a>
+            </div> 
+          </div>
 
-      </div>
-    </main>
+          <!-- Card 2: The Lavender -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <a href="#" class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- Cover/Spread Image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="An editorial studio photograph of an open, beautifully designed indie literary magazine titled The Lavender. The pages show artistic layout, elegant typography, minimalist styling, with dried lavender stems lying delicately across the paper spread, elegant modern aesthetic."></div>
+                <!-- Sophisticated Minimal Overlay on Hover -->
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <span class="text-white text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 font-bold">Read Publication</span>
+                </div>
+              </a>
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">The Lavender</h3>
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Creative Curation / Editing</span>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                A curated campus literary and arts magazine established to showcase underrepresented creative voices. Handled the editorial selection, aesthetic layout direction, design systems, and final publishing run during college.
+              </p>
+            </div>
+            <div>
+              <a href="#" class="inline-flex items-center text-sm font-bold tracking-wider uppercase border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors duration-200">
+                View Magazine Issue →
+              </a>
+            </div> 
+          </div> <!-- Card 3: Poetry Publications -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <div class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- Literary journal background image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="A moody, high-end editorial flatlay of a typewriter with textured cream paper, ink bottles, and open literary journal reviews scattered on a dark wooden study desk. Shadows of leaves fall across the paper. Timeless artistic look."></div>
+              </div>
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">Selected Poetry</h3>
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Creative Writing</span>
+              </div>
+              
+              <!-- Published works list -->
+              <div class="space-y-3 mb-6 text-sm text-gray-700">
+                <div class="border-l-2 border-black pl-3 py-0.5">
+                  <p class="font-bold">"Title of Poem One"</p>
+                  <p class="text-xs text-gray-500">Published in <span class="italic font-medium">The Wesleyan Argus</span> — Spring Issue</p>
+                </div>
+                <div class="border-l-2 border-black pl-3 py-0.5">
+                  <p class="font-bold">"Title of Poem Two"</p>
+                  <p class="text-xs text-gray-500">Published in <span class="italic font-medium">The Cadence Review</span> — Vol. IV</p>
+                </div>
+                <div class="border-l-2 border-black pl-3 py-0.5">
+                  <p class="font-bold">"Title of Poem Three"</p>
+                  <p class="text-xs text-gray-500">Featured in <span class="italic font-medium">Ostrich Literary Magazine</span> — Autumn Edition</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <span class="inline-flex items-center text-sm font-bold tracking-wider uppercase text-gray-400 cursor-not-allowed border-b-2 border-transparent pb-1">
+                Poetry Folio
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 4: Press Releases & PR -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <a href="#" class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- PR wire / communications image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="A clean, modern corporate communications setup. A premium tablet on an office desk displays a press release mockup with the Burson branding, elegant brass desk accessories, warm morning sunlight casting shadows."></div>
+                <!-- Sophisticated Minimal Overlay on Hover -->
+                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                  <span class="text-white text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 font-bold">Read Releases</span>
+                </div>
+              </a> 
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">Press Releases &amp; PR</h3>
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Strategic Communications</span>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                A collection of professional press releases drafted, edited, and targeted for distribution during my public relations internship at Burson. Focuses on tech narratives, corporate messaging, and high-impact announcements.
+              </p>
+            </div>
+            <div>
+              <a href="#" class="inline-flex items-center text-sm font-bold tracking-wider uppercase border-b-2 border-black pb-1 hover:text-gray-500 hover:border-gray-500 transition-colors duration-200">
+                View PR Archive →
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Showcase Grid --> </div> </main>
+
   </div>
 
-  <!-- Contact Section -->
-  <footer id="contact" class="text-center py-16">
-    <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-    <div class="mt-8">
-      <a href="mailto:miaeniko@gmail.com" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">Email Me</a>
-    </div>
-    <div class="mt-8">
-      <a href="https://www.linkedin.com/in/miaenikoalexander" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">My LinkedIn</a>
-    </div>
-    <div class="mt-8">
-      <a href="MIA ALEXANDER RESUME.pdf" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300" download>Download My Resume</a>
-    </div>
-  </footer>
-
+  <!-- Fixed and Optimized Cursor Script -->
   <script>
     const cursor = document.querySelector('.custom-cursor');
+    
+    // Update cursor position seamlessly
     window.addEventListener('mousemove', e => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
+
+    // Make interactive elements scale the custom cursor
     const interactiveElements = document.querySelectorAll('a, button');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
@@ -103,5 +196,5 @@
     });
   </script>
 
-</body>
-</html>
+
+</body></html>
