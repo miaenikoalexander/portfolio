@@ -12,7 +12,15 @@
       background-color: #ffffff;
       color: #000000;
       cursor: none;
+
+      
+  /* --- ADDED DOTTED GRID BACKGROUND --- */
+  /* This creates 1px gray dots (#e5e7eb) spaced 24px apart */
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-attachment: fixed; /* Keeps the grid fixed in place when scrolling */
     }
+    
     a, button { cursor: none; }
     header h1 { font-family: 'gambado-scotch', serif; }
     html { scroll-behavior: smooth; }
