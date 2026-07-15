@@ -57,20 +57,139 @@
       <div class="flex flex-col gap-12">
         <h2 class="text-3xl font-bold mb-6">Projects & Experience</h2>
         
-        <!-- ADD MORE SPECIFIC INFORMATION HERE -->
-        <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-          <p class="arial-italic text-gray-500 text-lg mb-4">
-            [Space for more specific information, video embeds (YouTube/Vimeo/Google Drive), or case studies about Filmmaking projects]
-          </p>
-          <p class="text-sm text-gray-400">
-            Tip: Replace this div with your video embeds, behind-the-scenes images, or detailed bullet points.
-          </p>
-        </div>
-        <!-- END PLACEHOLDER -->
+        <!-- Video Showcase Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Card 1: D20 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300">
+            <div>
+              <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white">
+                <!-- Replace 'data-src' with your actual thumbnail image path if available -->
+                <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('path-to-d20-thumbnail.jpg');"></div>
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                  <span class="p-3 bg-red-600 rounded-full text-white shadow-lg animate-pulse">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs font-semibold tracking-wider uppercase bg-black bg-opacity-50 px-2.5 py-1 rounded">Narrative / Short Film</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">D20</h3>
+                <p class="text-gray-600 text-sm">
+                  An intense cinematic exploration showcasing advanced storytelling, dramatic lighting, and meticulous pacing.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="YOUR_D20_VIDEO_URL_HERE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-semibold text-white bg-black hover:bg-gray-800 rounded-lg transition-colors duration-200">
+                Watch Video 
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
 
-      </div>
-    </main>
-  </div>
+          <!-- Card 2: Swordfish -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300">
+            <div>
+              <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white">
+                <!-- Replace 'data-src' with your actual thumbnail image path if available -->
+                <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('path-to-swordfish-thumbnail.jpg');"></div>
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                  <span class="p-3 bg-red-600 rounded-full text-white shadow-lg">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs font-semibold tracking-wider uppercase bg-black bg-opacity-50 px-2.5 py-1 rounded">Commercial / Promo</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Swordfish</h3>
+                <p class="text-gray-600 text-sm">
+                  High-octane visual direction featuring dynamic editing rhythms, sharp color grading, and modern compositions.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="YOUR_SWORDFISH_VIDEO_URL_HERE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-semibold text-white bg-black hover:bg-gray-800 rounded-lg transition-colors duration-200">
+                Watch Video 
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Bartek -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300">
+            <div>
+              <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white">
+                <!-- Replace 'data-src' with your actual thumbnail image path if available -->
+                <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('path-to-bartek-thumbnail.jpg');"></div>
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                  <span class="p-3 bg-red-600 rounded-full text-white shadow-lg">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs font-semibold tracking-wider uppercase bg-black bg-opacity-50 px-2.5 py-1 rounded">Documentary / Portrait</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Bartek</h3>
+                <p class="text-gray-600 text-sm">
+                  An intimate character study capturing raw human emotion through stunning cinematography and natural soundscapes.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="YOUR_BARTEK_VIDEO_URL_HERE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-semibold text-white bg-black hover:bg-gray-800 rounded-lg transition-colors duration-200">
+                Watch Video 
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Cannes Recap -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 flex flex-col justify-between hover:shadow-lg transition-shadow duration-300">
+            <div>
+              <div class="relative bg-slate-900 aspect-video flex items-center justify-center text-white">
+                <!-- Replace 'data-src' with your actual thumbnail image path if available -->
+                <div class="absolute inset-0 bg-cover bg-center opacity-60" style="background-image: url('path-to-cannes-thumbnail.jpg');"></div>
+                <div class="relative z-10 flex flex-col items-center gap-2">
+                  <span class="p-3 bg-red-600 rounded-full text-white shadow-lg">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </span>
+                  <span class="text-xs font-semibold tracking-wider uppercase bg-black bg-opacity-50 px-2.5 py-1 rounded">Event / Behind The Scenes</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-2">Cannes Recap</h3>
+                <p class="text-gray-600 text-sm">
+                  An energetic, fast-paced recap of festival highlights, red carpet moments, and industry panels.
+                </p>
+              </div>
+            </div>
+            <div class="p-6 pt-0">
+              <a href="YOUR_CANNES_VIDEO_URL_HERE" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-semibold text-white bg-black hover:bg-gray-800 rounded-lg transition-colors duration-200">
+                Watch Video 
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+        <!-- End Video Showcase Grid -->
 
   <!-- Contact Section -->
   <footer id="contact" class="text-center py-16">
