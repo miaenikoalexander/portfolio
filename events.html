@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html data-type="html" data-identifier="8ef94b05-df35-4235-908a-e55d57b2f4f8" data-title="Events - Mia Alexander" data-version="2" width="1200" height="800"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Events - Mia Alexander</title>
@@ -11,37 +9,26 @@
       font-family: 'gambado-sans', sans-serif;
       background-color: #ffffff;
       color: #000000;
-      cursor: none;
+      cursor: none; /* Hide default cursor */
     }
-    .dotted-bg {
-  position: fixed;
-  inset: 0;
-  z-index: -1; /* Pushes the grid behind your text */
-  pointer-events: none; /* Prevents the grid from blocking clicks/interactions */
-  
-  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-  background-size: 24px 24px;
-  
-  /* Smooth radial fade: strongest at the center, melts away at the edges */
-  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-  mask-image: radial-gradient(circle at center, black 40%, transparent 85%);
-}
     a, button { cursor: none; }
     header h1 { font-family: 'gambado-scotch', serif; }
     html { scroll-behavior: smooth; }
     .arial-italic { font-family: Arial, sans-serif; font-style: italic; }
+    
     .custom-cursor {
       width: 56px;
       height: 56px;
       background-image: url('big_cursor.png');
       background-size: cover;
       position: fixed;
+      left: -100px; /* Hide off-screen initially */
+      top: -100px;
       border-radius: 50%;
-      pointer-events: none;
+      pointer-events: none; /* Crucial so cursor doesn't block clicks */
       transform: translate(-50%, -50%);
       transition: transform 0.1s ease-out;
       z-index: 9999;
-      box-shadow: 0 0 5px rgba(0,0,0,0);
     }
   </style>
 </head>
@@ -51,60 +38,108 @@
 
   <div class="container mx-auto px-6 md:px-24 py-8">
     <!-- Navigation -->
-    <nav class="flex justify-end space-x-6 md:space-x-12 text-sm md:text-base tracking-wider uppercase">
-      <a href="index.html#about" class="hover:text-gray-500 transition duration-300">About</a>
-      <a href="index.html#work" class="hover:text-gray-500 transition duration-300">Work</a>
-      <a href="index.html#contact" class="hover:text-gray-500 transition duration-300">Contact</a>
+    <nav class="flex justify-between items-center tracking-wider uppercase text-sm md:text-base">
+      <a href="index.html" class="hover:text-gray-500 transition duration-300 underline font-semibold">← Home</a>
+      <div class="flex space-x-6 md:space-x-12">
+        <a href="index.html#about" class="hover:text-gray-500 transition duration-300">About</a>
+        <a href="index.html#work" class="hover:text-gray-500 transition duration-300">Work</a> 
+        <a href="index.html#contact" class="hover:text-gray-500 transition duration-300">Contact</a>
+      </div>
     </nav>
 
-    <!-- Header -->
-    <header class="text-center py-12 md:py-16">
-      <h1 class="font-bold text-[clamp(2.5rem,10vw,8rem)] tracking-tighter leading-tight">
-        Events
-      </h1>
-      <a href="index.html" class="inline-block mt-4 text-gray-600 hover:text-black transition duration-300 underline">← Back to Home</a>
-    </header>
-
-    <!-- Main Content Area -->
-    <main class="my-12">
+    <!-- Main Content Area --><main class="my-16">
       <div class="flex flex-col gap-12">
-        <h2 class="text-3xl font-bold mb-6">Projects & Experience</h2>
         
-        <!-- ADD MORE SPECIFIC INFORMATION HERE -->
-        <div class="bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-12 text-center">
-          <p class="arial-italic text-gray-500 text-lg mb-4">
-            [Space for more specific information, photo galleries, or case studies about Events projects]
-          </p>
-          <p class="text-sm text-gray-400">
-            Tip: Replace this div with your event recaps, photo grids, or detailed bullet points.
-          </p>
+        <!-- Minimalist Section Header -->
+        <div class="border-b border-black pb-4">
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Events &amp; Panels</h2>
         </div>
-        <!-- END PLACEHOLDER -->
+        
+        <!-- Events Showcase Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          <!-- Card 1: 2026 Cannes Lions -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <div class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- Cannes Lions Image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="A stunning daytime shot of a prestigious modern outdoor corporate pavilion at the Cannes Lions International Festival of Creativity. The background features lush palm trees, sunlit Mediterranean architecture, and elegant minimal branded banners under a clear blue sky, upscale aesthetic."></div>
+              </div>
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">Cannes Lions</h3>
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Burson • Global Logistics</span>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Coordinated global marketing logistics for Burson’s executive delegation at the Cannes Lions. Responsibilities included managing VIP scheduling, panel coordination, securing branded merchandise, and writing copy for public-facing digital communications.
+              </p>
+            </div>
+            <div>
+              <span class="inline-flex items-center text-xs font-bold tracking-widest uppercase text-gray-400 border-b border-transparent pb-1">
+                Completed • June 2026
+              </span>
+            </div> 
+          </div>
 
-      </div>
+          <!-- Card 2: Avenir Community Events -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <div class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- Avenir Community Events Image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="An upscale urban community activation event in New York City with sleek architectural displays of high-end real estate developments. Interactive screens, elegant modern decor, warm lighting, and a diverse professional group gathering."></div>
+              </div>
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">Avenir Events</h3>
+                <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Silverstein Properties • Experiential</span>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Assisted the experiential marketing team at Silverstein Properties with the coordination of a series of community-facing events to publicize the Avenir, a $7B casino license bid.
+              </p>
+            </div>
+            <div>
+              <span class="inline-flex items-center text-xs font-bold tracking-widest uppercase text-gray-400 border-b border-transparent pb-1">
+                Completed Series
+              </span>
+            </div> 
+          </div>
+
+          <!-- Card 3: DDC Productions Panels -->
+          <div class="group flex flex-col justify-between">
+            <div>
+              <div class="block relative aspect-video overflow-hidden bg-gray-100 mb-4">
+                <!-- DDC Productions Panels Image -->
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-src="A stylish, dimly lit contemporary panel discussion theater. Prominent microphone stands, cozy mid-century modern armchairs on a stage, soft geometric spotlighting casting shadows, artistic and professional cinematic mood."></div>
+              </div>
+              <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-bold tracking-tight">DDC Productions</h3> <span class="text-xs uppercase tracking-wider text-gray-500 font-semibold">Wesleyan • Speaker Series</span>
+              </div>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Co-founded a student club that organized and executed speaker events featuring film industry professionals, fostering insightful discussions and industry connections for the Wesleyan student body.
+              </p>
+            </div>
+            <div>
+              <span class="inline-flex items-center text-xs font-bold tracking-widest uppercase text-gray-400 border-b border-transparent pb-1">
+                Completed Panels
+              </span>
+            </div> 
+          </div>
+
+        </div>
+        <!-- End Events Showcase Grid --> </div>
     </main>
+
   </div>
 
-  <!-- Contact Section -->
-  <footer id="contact" class="text-center py-16">
-    <h2 class="text-3xl font-bold mb-4">Contact Me</h2>
-    <div class="mt-8">
-      <a href="mailto:miaeniko@gmail.com" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">Email Me</a>
-    </div>
-    <div class="mt-8">
-      <a href="https://www.linkedin.com/in/miaenikoalexander" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300">My LinkedIn</a>
-    </div>
-    <div class="mt-8">
-      <a href="MIA ALEXANDER RESUME.pdf" class="px-8 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition duration-300" download>Download My Resume</a>
-    </div>
-  </footer>
-
+  <!-- Fixed and Optimized Cursor Script -->
   <script>
     const cursor = document.querySelector('.custom-cursor');
+    
+    // Update cursor position seamlessly
     window.addEventListener('mousemove', e => {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
     });
+
+    // Make interactive elements scale the custom cursor
     const interactiveElements = document.querySelectorAll('a, button');
     interactiveElements.forEach(el => {
       el.addEventListener('mouseenter', () => {
@@ -116,5 +151,5 @@
     });
   </script>
 
-</body>
-</html>
+
+</body></html>
